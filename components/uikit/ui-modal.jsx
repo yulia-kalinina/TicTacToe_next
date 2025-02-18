@@ -24,9 +24,9 @@ export function UiModal({
   }
 
   const handleClick = (e) => {
-    if (e.currentTarget === e.target) {
-      onClose();
-    }
+    const inModal = e.target.closest("[data-id=modal]");
+    if (inModal) return;
+    onClose();
   };
 
   const modal = (
@@ -38,6 +38,7 @@ export function UiModal({
       )}
     >
       <div
+        data-id="modal"
         className={clsx(
           "bg-white rounded-lg min-h-[320px] mx-auto relative flex flex-col",
           {

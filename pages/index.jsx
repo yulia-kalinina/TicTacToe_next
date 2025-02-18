@@ -42,7 +42,7 @@ export default function HomePage() {
           </div>
         )}
 
-        <UiModal width="md" isOpen={winnerSymbol}>
+        <UiModal width="md" isOpen={winnerSymbol} onClose={() => console.log("close")}>
           <UiModal.Header>Игра завершена!</UiModal.Header>
           <UiModal.Body>
             <div className="text-sm">
